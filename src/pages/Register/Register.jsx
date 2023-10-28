@@ -49,7 +49,7 @@ const Register = () => {
         swal({
           title: "User registation successfull.",
         });
-        fetch("https://tech-sparc-server-side.vercel.app/users", {
+        fetch("https://car-doctors-server-beta.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
