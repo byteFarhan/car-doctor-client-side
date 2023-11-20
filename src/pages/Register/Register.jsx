@@ -49,7 +49,7 @@ const Register = () => {
         swal({
           title: "User registation successfull.",
         });
-        fetch("https://car-doctors-server-beta.vercel.app/users", {
+        fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -82,7 +82,7 @@ const Register = () => {
           photoURL: result.user.photoURL,
           email: result.user.email,
         };
-        fetch("https://car-doctors-server-beta.vercel.app/users", {
+        fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

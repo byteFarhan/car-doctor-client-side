@@ -3,6 +3,7 @@ import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import swal from "sweetalert";
+// import axios from "axios";
 
 const Login = () => {
   const location = useLocation();
@@ -22,6 +23,23 @@ const Login = () => {
     userSignIn(email, password)
       .then((result) => {
         // console.log(result.user);
+        // const user = { email };
+        // axios
+        //   .post("http://localhost:5000/jwt", user, { withCredentials: true })
+        //   .then((data) => {
+        //     console.log(data.data);
+        //   })
+        //   .catch((error) => {
+        //     console.log(error.message);
+        //   });
+        // axios
+        //   .post("http://localhost:5000/jwt", user, { withCredentials: true })
+        //   .then((data) => {
+        //     console.log(data.data);
+        //   })
+        //   .catch((error) => {
+        //     console.log(error.message);
+        //   });
         setSuccess("User logged in successfull.");
         swal("User logged in successfull.", {
           button: false,

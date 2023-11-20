@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
+import useAuth from "../../hooks/useAuth";
 const Navbar = () => {
+  const { userSignOut, user } = useAuth();
+  const handleSignOut = () => {
+    userSignOut().catch((e) => {
+      console.log(e.message);
+    });
+  };
   const navLinks = (
     <>
       <li>
@@ -9,11 +16,20 @@ const Navbar = () => {
       <li>
         <Link to="/about">About</Link>
       </li>
+      {user && (
+        <li>
+          <Link to="/bookings">Bookings</Link>
+        </li>
+      )}
       <li>
         <Link to="/register">Register</Link>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        {user ? (
+          <button onClick={handleSignOut}>Log Out</button>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </li>
     </>
   );

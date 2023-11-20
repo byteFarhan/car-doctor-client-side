@@ -17,7 +17,7 @@ const Service = ({ service }) => {
           <h2 className="text-2xl font-bold">{title}</h2>
           <div className="flex items-center justify-between text-[#FF3811]">
             <p className="text-xl font-medium">Price: ${price}</p>
-            <Link to={`/checkout/${_id}`}>
+            <Link to={`/bookservice/${_id}`}>
               <AiOutlineArrowRight className="text-3xl font-bold" />
             </Link>
           </div>
